@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Coins controller
 class CoinsController < ApplicationController
   before_action :set_coin, only: %i[show edit update destroy]
