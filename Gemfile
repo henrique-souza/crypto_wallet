@@ -74,6 +74,12 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'ruby-lsp', '~> 0.3.6', :group => :development
-
 gem 'htmlbeautifier'
+
+gem 'solargraph', '~> 0.47.2'
+
+gem 'solargraph-rails', '~> 1.1'
+
+gem 'nokogiri', '~> 1.13'
+
+gem 'rufo', '~> 0.13.0'
