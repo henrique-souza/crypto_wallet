@@ -1,7 +1,17 @@
 <h1>Welcome!</h1>
+<!--
 <h2>Testando subtitulo</h2>
 <p>Tentando uma multiplicação com ERB: 2 * 5 = <%= 2 * 5 %> </p>
 <p>Meu nome de trás pra frente: <%= "Henrique".reverse %> </p>
 <% a = "Uma variável qualquer" %>
 <p>Imprimindo a variável qualquer: <%= a %></p>
 <p>A data de hoje é: <%= Date.today %> </p>
+-->
+<!-- Primeira forma, em HTML -->
+<ul>
+  <a href="/coins">Cadastro de Moedas</a>
+</ul>
+<!-- Segunda forma, usando Ruby -->
+<ul>
+  <%= link_to "Cadastro de Moedas", "/coins" %>
+</ul>
