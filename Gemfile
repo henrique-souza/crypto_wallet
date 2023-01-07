@@ -82,6 +82,6 @@ gem 'nokogiri', '~> 1.13'
 
 gem 'rufo', '~> 0.13.0'
 
-gem 'erb-formatter', '~> 0.3.0'
-
 gem 'ruby-lsp', '~> 0.3.7'
+
+gem 'htmlbeautifier', '~> 1.4'
