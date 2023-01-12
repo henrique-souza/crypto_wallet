@@ -15,9 +15,12 @@
 <ul>
 	<a href="/coins">Cadastro de Moedas</a>
 </ul>
+
+<p> <strong>Data: </strong> <%= Date.today.strftime("%d/%m/%Y") %> </p>
 -->
 
-<p> Data: <%= Date.today.strftime("%d/%m/%Y") %> </p>
+<%# Chamando o helper de aplication_helper.rb %>
+<p><strong>Data: </strong> <%= brazilian_date(Date.today) %> </p>
 
 <!-- Segunda forma, usando Ruby -->
 <ul>
