@@ -32,6 +32,32 @@ Podemos simplificar o código acima [usando Ruby](app/views/../../../app/views/w
 
 Para saber as informações do Path que precisa ser chamado, utiliza-se a URL com ```http://{PORT}/rails/info/routes``` no final, para poder checar o path do caminho desejado.
 
+Há a possibilidade de, por exemplo, fazer com que as imagens cadastradas via URL nos [forms de cadastros, dentro do container de 'url_image'](app/views/coins/../../../../app/views/coins/_form.html.erb) aparecerem ao editar uma coin, usando
+
+```erb
+<%= image_tag coin.url_image, size:"30x30" %>
+```
+
+Algumas formas de settar o tamanho da imagem:
+
+- Usando tag ```img```
+
+```erb
+<img src="<%= coin.url_image %>" width="50" height="50" />
+```
+
+- Escrevendo as larguras com ERB (```image_tag``` resume toda a tag ```img``` acima)
+
+```erb
+<%= image_tag coin.url_image, width: 30, height: 30 %>
+```
+
+- Ou, simplificando:
+
+```erb
+<%= image_tag coin.url_image, size:"30x30" %>
+```
+
 ## Helpers
 
 No projeto, precisei recuperar a data atual com formato brasileiro. Poderíamos ter feito isso mesclando Ruby com HTML da seguinte forma
@@ -40,14 +66,14 @@ No projeto, precisei recuperar a data atual com formato brasileiro. Poderíamos 
 <p> <strong>Data: </strong> <%= Date.today.strftime("%d/%m/%Y") %> </p>
 ```
 
-Porém, é mais fácil escrever isso no [helper](app/../../app/helpers/application_helper.rb), tornando possível chamar o formatador em toda aplicação, usando
+Porém, é mais fácil escrever isso no [helper](app/../../app/helpers/application_helper.rb), tornando possível [chamar o formatador](app/views/../../../app/views/welcome/index.html.erb) em toda aplicação, usando
 
 ```ruby
 brazilian_date(Date.today)
 ```
 
 <details>
-    <summary>Como estou estudando o asdf, muito provavelmente estas notas abaixo estarão obsoletas
+    <summary>Como estou estudando o asdf, muito provavelmente estas notas abaixo estarão obsoletas, mas vou deixar escrito mesmo assim caso alguém esteja passando pela mesma coisa
     </summary>
 
 ## Atualização de Ruby
