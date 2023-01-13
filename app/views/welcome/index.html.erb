@@ -1,36 +1,8 @@
 <h1>Welcome!</h1>
-<!--
-<p>Tentando uma multiplicação com ERB: 2 * 5 = <%= 2 * 5 %> </p>
 
-<p>Meu nome de trás pra frente: <%= "Henrique".reverse %> </p>
-
-<% a = "Uma variável qualquer" %>
-
-<p>Imprimindo a variável qualquer: <%= a %></p>
-
-<p>A data de hoje é: <%= Date.today %> </p>
--->
-
-<!-- Primeira forma, em HTML
-<ul>
-	<a href="/coins">Cadastro de Moedas</a>
-</ul>
-
-<p> <strong>Data: </strong> <%= Date.today.strftime("%d/%m/%Y") %> </p>
--->
-
-<%# Chamando o helper de aplication_helper.rb %>
 <p><strong>Data: </strong> <%= brazilian_date(Date.today) %> </p>
 
-<!-- Segunda forma, usando Ruby -->
 <ul>
-	<!--
-  <%= link_to "Cadastro de Moedas", "/coins" %>
-
-  Para saber as informações do Path abaixo,
-  utiliza-se a URL com 'rails/info/routes'
-  no final, para poder checar o path do caminho desejado
-  -->
 	<li>
 		<%= link_to "Cadastro de Moedas", coins_path %>
 	</li>

@@ -1,5 +1,55 @@
 # Anotações gerais do projeto
 
+## ERB
+
+Dá pra fazer mistura de HTML com Ruby usando ```<%= %>``` no meio das marcações.
+
+```erb
+<p>Tentando uma multiplicação com ERB: 2 * 5 = <%= 2 * 5 %> </p>
+
+<p>Meu nome de trás pra frente: <%= "Henrique".reverse %> </p>
+
+<% a = "Uma variável qualquer" %>
+
+<p>Imprimindo a variável qualquer: <%= a %></p>
+
+<p>A data de hoje é: <%= Date.today %> </p>
+```
+
+Nas configurações das Views, tem como chamar outra view utilizando seu path, como podemos ver em abaixo
+
+```erb
+<ul>
+ <a href="/coins">Cadastro de Moedas</a>
+</ul>
+```
+
+Podemos simplificar o código acima [usando Ruby](app/views/../../../app/views/welcome/index.html.erb)
+
+```erb
+<%= link_to "Cadastro de Moedas", "/coins" %>
+```
+
+Para saber as informações do Path que precisa ser chamado, utiliza-se a URL com ```http://{PORT}/rails/info/routes``` no final, para poder checar o path do caminho desejado.
+
+## Helpers
+
+No projeto, precisei recuperar a data atual com formato brasileiro. Poderíamos ter feito isso mesclando Ruby com HTML da seguinte forma
+
+```erb
+<p> <strong>Data: </strong> <%= Date.today.strftime("%d/%m/%Y") %> </p>
+```
+
+Porém, é mais fácil escrever isso no [helper](app/../../app/helpers/application_helper.rb), tornando possível chamar o formatador em toda aplicação, usando
+
+```ruby
+brazilian_date(Date.today)
+```
+
+<details>
+    <summary>Como estou estudando o asdf, muito provavelmente estas notas abaixo estarão obsoletas
+    </summary>
+
 ## Atualização de Ruby
 
 Algumas atualizações antes necessitam de upgrade do sistema inteiro e do [ruby-build][ruby-build] (caso seja o rbenv)
@@ -10,6 +60,6 @@ Pra atualizar a versão do Ruby usando rbenv é só digitar ```rbenv uninstall``
 Depois de instalar o ```libyaml```, rodei o comando pra instalar o Ruby novamente e rodei normalmente ```rbenv install {VERSION}``` e funcionou normalmente
 
 Depois do problema resolvido, rodei ```rbenv versions``` pra conferir as versões do Ruby instaladas e vi que a versão anterior do Ruby ainda estava apontada. Rodando ```rbenv global {VERSION}``` e ```rbenv local {VERSION}``` para que a nova versão do Ruby fosse reconhecida. Depois disso tudo, mudamos a versão do Ruby no ```Gemfile``` e em ```.ruby-version``` e depois rodamos ```bundle install``` pra atualizar tudo
-
+</details>
 
 [ruby-build]: https://github.com/rbenv/ruby-build#installation
