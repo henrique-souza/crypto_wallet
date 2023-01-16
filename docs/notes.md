@@ -30,7 +30,7 @@ Podemos simplificar o código acima [usando Ruby](app/views/../../../app/views/w
 <%= link_to "Cadastro de Moedas", "/coins" %>
 ```
 
-Para saber as informações do Path que precisa ser chamado, utiliza-se a URL com ```http://{PORT}/rails/info/routes``` no final, para poder checar o path do caminho desejado.
+Para saber as informações do Path que precisa ser chamado, utiliza-se a URL com ```http://{PORT}/rails/info/routes``` no final, para poder checar o path do caminho desejado. Digitar ```rails routes``` no terminal também leva ao mesmo resultado.
 
 Há a possibilidade de, por exemplo, fazer com que as imagens cadastradas via URL nos [forms de cadastros, dentro do container de 'url_image'](app/views/coins/../../../../app/views/coins/_form.html.erb) aparecerem ao editar uma coin, usando
 
@@ -71,6 +71,16 @@ Porém, é mais fácil escrever isso no [helper](app/../../app/helpers/applicati
 ```ruby
 brazilian_date(Date.today)
 ```
+
+## Routes
+
+No Rails a atribuição da palavra ```resources``` a algum elemento ou objeto da página faz com que sejam gerados os verbos HTTP relacionados a ele, por exemplo
+
+```ruby
+resources :coins
+```
+
+Depois do uso da instrução acima em [routes.rb](app/config/../../../config/routes.rb), ```coins``` ganha 7 verbos HTTP, além das padrão ```GET```, ```POST```, ```PUT``` e ```DELETE```.
 
 <details>
     <summary>Como estou estudando o asdf, muito provavelmente estas notas abaixo estarão obsoletas, mas vou deixar escrito mesmo assim caso alguém esteja passando pela mesma coisa
