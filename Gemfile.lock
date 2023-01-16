@@ -285,7 +285,6 @@ DEPENDENCIES
   nokogiri (~> 1.13)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
-  rubocop
   ruby-lsp
   rufo (~> 0.13.0)
   selenium-webdriver
