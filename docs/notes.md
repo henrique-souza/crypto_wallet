@@ -108,6 +108,8 @@ bin/rails c -e test
 
 > Os testes com o `bin/rails console` podem modificar o banco de dados, dependendo do teste
 
+### Pry-Rails
+
 Saindo do ambiente de teste, foi instalado o `pry-rails` através de `gem install pry-rails`, consegui testar cada Coin da Crypto_Wallet utilizando `bin/rails c` e depois `Coin.first` ou `Coin.all` e o resultado será parecido com isso:
 
 ```ruby
@@ -119,6 +121,14 @@ Saindo do ambiente de teste, foi instalado o `pry-rails` através de `gem instal
  created_at: Sun, 08 Jan 2023 04:43:20.033366000 UTC +00:00,
  updated_at: Sun, 08 Jan 2023 04:43:24.086762000 UTC +00:00>
 ```
+
+Se quisermos criar uma nova `Coin` através do IRB usando `pry-rails`, podemos criar um novo objeto e associá-lo a uma variável.
+
+> Ao digitar `Coin.` no Pry, podemos apertar TAB duas vezes e receber uma lista de possibilidades do que fazer com este comando.
+
+Por exemplo, usando `new_coin = Coin.new`, poderemos então configurar [cada parametro desta nova `Coin`][coins_controller] na mão, usando: `new_coin.description = "Moeda Qualquer"` e assim por diante, pra cada parametro. Para salvar, utiliza-se `new_coin.save!`.
+
+> Outra forma de criar uma nova `Coin` seria utilizando o comando `.create!`. Ficaria `new_coin = Coin.create!()` essa forma economiza digitação, pois podemos settar os dados dos parâmetros da moeda dentro do método, por exemplo `new_coin = Coin.create!( descripction: "Moeda Fulana", acronym: "MOEF" )`
 
 Para testar código sem modificar o banco de dados, temos o
 
@@ -158,3 +168,4 @@ Depois do problema resolvido, rodei `rbenv versions` pra conferir as versões do
 [welcome_index]: app/views/../../../app/views/welcome/index.html.erb
 [routes]: app/config/../../../config/routes.rb
 [ruby-build]: https://github.com/rbenv/ruby-build#installation
+[coins_controller]: app/controllers/../../../app/controllers/coins_controller.rb
