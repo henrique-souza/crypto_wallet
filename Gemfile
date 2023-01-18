@@ -64,8 +64,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-
-  gem 'ruby-lsp', require: false
 end
 
 group :test do
@@ -84,3 +82,5 @@ gem 'nokogiri', '~> 1.13'
 gem 'rufo', '~> 0.13.0'
 
 gem 'htmlbeautifier', '~> 1.4'
+
+gem 'pry-rails', '~> 0.3.9'

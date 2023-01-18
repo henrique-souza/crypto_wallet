@@ -108,6 +108,18 @@ bin/rails c -e test
 
 > Os testes com o `bin/rails console` podem modificar o banco de dados, dependendo do teste
 
+Saindo do ambiente de teste, foi instalado o `pry-rails` através de `gem install pry-rails`, consegui testar cada Coin da Crypto_Wallet utilizando `bin/rails c` e depois `Coin.first` ou `Coin.all` e o resultado será parecido com isso:
+
+```ruby
+#<Coin:0x00007f142cf478c8
+ id: 3,
+ description: "Bitcoin",
+ acronym: "BTC",
+ url_image: "https://bitcoin.org/img/icons/opengraph.png?1671880122",
+ created_at: Sun, 08 Jan 2023 04:43:20.033366000 UTC +00:00,
+ updated_at: Sun, 08 Jan 2023 04:43:24.086762000 UTC +00:00>
+```
+
 Para testar código sem modificar o banco de dados, temos o
 
 ```bash
