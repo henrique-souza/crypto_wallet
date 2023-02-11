@@ -78,3 +78,7 @@ gem "ruby-lsp", "~> 0.3.8", group: :development
 gem "rubocop", "~> 1.44", group: :development
 
 gem "rubocop-shopify", "~> 2.12", group: :development
+
+gem "solargraph", "~> 0.48.0", :group => :development
+
+gem "htmlbeautifier", "~> 1.4", :group => :development
