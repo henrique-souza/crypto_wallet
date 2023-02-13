@@ -79,6 +79,8 @@ gem "rubocop", "~> 1.44", group: :development
 
 gem "rubocop-shopify", "~> 2.12", group: :development
 
-gem "solargraph", "~> 0.48.0", :group => :development
+gem "solargraph", "~> 0.48.0", group: :development
 
-gem "htmlbeautifier", "~> 1.4", :group => :development
+gem "htmlbeautifier", "~> 1.4", group: :development
+
+gem "pry-rails", "~> 0.3.9", group: :development
