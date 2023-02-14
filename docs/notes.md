@@ -142,6 +142,24 @@ ou
 bin/rails c --sandbox
 ```
 
+## Gemfile
+
+A fim de padronizar as gems de configuração do VSCode, vou deixar aqui as Gems adicionais e padrão da configuração atual:
+
+```ruby
+gem "rubocop", "~> 1.44", group: :development
+
+gem "rubocop-shopify", "~> 2.12", group: :development
+
+gem "solargraph", "~> 0.48.0", group: :development
+
+gem "htmlbeautifier", "~> 1.4", group: :development
+
+gem "pry-rails", "~> 0.3.9", group: :development
+```
+
+São instaladas usando, por exemplo `bundle add pry-rails --group "development"`
+
 <details>
 <summary>
 
