@@ -124,7 +124,7 @@ Saindo do ambiente de teste, foi instalado o `pry-rails` através de `gem instal
 
 Se quisermos criar uma nova `Coin` através do IRB usando `pry-rails`, podemos criar um novo objeto e associá-lo a uma variável.
 
-> Ao digitar `Coin.` no Pry, podemos apertar TAB duas vezes e receber uma lista de possibilidades do que fazer com este comando.
+> Ao digitar `Coin.` no Pry, podemos apertar TAB duas vezes e receber uma lista de possibilidades do que fazer com este comando. Pra sair do pry, precisamos ir até `(END)` e digitar `Q`
 
 Por exemplo, usando `new_coin = Coin.new`, poderemos então configurar [cada parametro desta nova `Coin`][coins_controller] na mão, usando: `new_coin.description = "Moeda Qualquer"` e assim por diante, pra cada parametro. Para salvar, utiliza-se `new_coin.save!`.
 
