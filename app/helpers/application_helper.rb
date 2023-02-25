@@ -7,12 +7,19 @@ module ApplicationHelper
   end
 
   def ambiente_rails
+    # if Rails.env.development?
+    #   "Desenvolvimento"
+    # elsif Rails.env.test?
+    #   "Teste"
+    # else
+    #   "Produção"
+    # end
+
+    # Reduzindo as linhas acima para operação ternária
     if Rails.env.development?
       "Desenvolvimento"
-    elsif Rails.env.test?
-      "Teste"
     else
-      "Produção"
+      Rails.env.test? ? "Teste" : "Produção"
     end
   end
 end
