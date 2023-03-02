@@ -5,9 +5,11 @@ class WelcomeController < ApplicationController
   def index
     @name = "Henrique"
 
-    @god_knowledge = "Batman"
+    @batman = "Batman"
 
-    # after using http://127.0.0.1:3000/?god_velocity=Flash
-    @god_velocity = params[:god_velocity] #=> Flash
+    # after using http://127.0.0.1:3000/?god_speed=Flash
+    @flash = params[:god_speed] #=> Flash
+
+    @hal_jordan = params[:god_light] #=> Hal Jordan
   end
 end

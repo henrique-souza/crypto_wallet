@@ -58,6 +58,23 @@ Algumas formas de settar o tamanho da imagem:
 <%= image_tag coin.url_image, size:"30x30" %>
 ```
 
+### Query parameters
+
+Em [welcome_controller.rb](/app/controllers/welcome_controller.rb), podemos ver um uso de uma variável de instância e de sessão.
+
+```ruby
+@flash = params[:god_speed]
+```
+
+Essa variável de instância `@flash` está recebendo o valor de um Hash. Esse hash é criado no momento em que executamos, por exemplo: `http://{PORT}/?god_speed=Flash` no navegador. O valor da chave `god_speed` é pode ser recuperado pela variável `@flash`
+
+```ruby
+Parameters: {"god_speed"=>"Flash", "god_light"=>"Hal Jordan"}
+```
+
+Pra enviar informações para mais de uma variável parametrizada, podemos usar:
+`http://{PORT}/?god_speed=Flash&god_light=Hal Jordan`
+
 ## Helpers
 
 No projeto, precisei recuperar a data atual com formato brasileiro. Poderíamos ter feito isso mesclando Ruby com HTML da seguinte forma
