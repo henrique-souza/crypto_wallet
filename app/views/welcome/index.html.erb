@@ -2,35 +2,10 @@
 
 <p><strong>Data: </strong> <%= brazilian_date(Date.today) %> </p>
 
-<ul>
-  <li>
-    <%= link_to "Cadastro de Moedas", coins_path %>
-  </li>
-</ul>
+<%= render 'menu' %>
 
 <p>
   Você está em ambiente de <strong> <%= ambiente_rails %> </strong>
 </p>
 
-<p>
-  Variável de instância/sessão: <%= @name %>
-
-  <p>
-    @name pode ter valor diferente a cada sessão
-  </p>
-
-  <p>
-    Deus do conhecimento: <%= @batman %>
-  </p>
-
-  <p>
-    <p>
-      Pra escrever o nome do Deus da velocidade abaixo, digite '<strong>?god_speed=Flash</strong>' na URL
-    </p>
-    Deus da velocidade: <strong> <%= @flash %> </strong>
-  </p>
-
-  <p>
-    Deus da luz: <strong> <%= @hal_jordan %> </strong>
-  </p>
-</p>
+<%= render 'instances' %>

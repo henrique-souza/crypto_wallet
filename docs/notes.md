@@ -75,6 +75,26 @@ Parameters: {"god_speed"=>"Flash", "god_light"=>"Hal Jordan"}
 Pra enviar informações para mais de uma variável parametrizada, podemos usar:
 `http://{PORT}/?god_speed=Flash&god_light=Hal Jordan`
 
+### Partials templates (Layouts and Rendering)
+
+Como se fosse uma herança de partes de outras views.
+Por exemplo, ao criar a view [_menu.html.erb](/app/views/welcome/_menu.html.erb), podemos chamar esta view em diversas outras views utilizando o Helper `render`
+
+```erb
+<%= render 'menu' %>
+```
+
+Dá pra ver esse processo na base da aplicação acessando [_form.html.erb](/app/views/coins/_form.html.erb) e vendo o uso de `_form` dentro de [edit.html.erb](/app/views/coins/edit.html.erb)
+
+Uma parte desse processamento mostra como se comporta o Helper `render`:
+
+```bash
+Rendering welcome/index.html.erb within layouts/application
+Rendered welcome/_menu.html.erb (Duration: 0.2ms | Allocations: 169)
+Rendered welcome/_instances.html.erb (Duration: 0.3ms | Allocations: 197)
+Rendered welcome/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 773)
+  ```
+
 ## Helpers
 
 No projeto, precisei recuperar a data atual com formato brasileiro. Poderíamos ter feito isso mesclando Ruby com HTML da seguinte forma
