@@ -3,9 +3,9 @@
 # Welcome controller
 class WelcomeController < ApplicationController
   def index
-    @name = "Henrique"
+    @name = 'Henrique'
 
-    @batman = "Batman"
+    @batman = 'Batman'
 
     # after using http://127.0.0.1:3000/?god_speed=Flash
     @flash = params[:god_speed] #=> Flash
