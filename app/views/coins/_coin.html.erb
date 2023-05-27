@@ -1,14 +1,22 @@
 <div id="<%= dom_id coin %>">
-  <p>
-    <strong>Description:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
     <%= coin.description %>
   </p>
-  <p>
-    <strong>Acronym:</strong>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Acronym:</strong>
     <%= coin.acronym %>
   </p>
-  <p>
-    <strong>Url image:</strong>
-    <%= image_tag coin.url_image, size:"30x30" %>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Url image:</strong>
+    <%= image_tag coin.url_image, size:"50x50" %>
   </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this coin", coin, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this coin', edit_coin_path(coin), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
 </div>

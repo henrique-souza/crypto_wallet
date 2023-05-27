@@ -1,31 +1,32 @@
-<%= form_with(model: coin) do |form| %>
-	<% if coin.errors.any? %>
-		<div style="color: red">
-			<h2><%= pluralize(coin.errors.count, "error") %> prohibited this coin from being saved:</h2>
-			<ul>
-				<% coin.errors.each do |error| %>
-					<li><%= error.full_message %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+<%= form_with(model: coin, class: "contents") do |form| %>
+  <% if coin.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(coin.errors.count, "error") %> prohibited this coin from being saved:</h2>
 
-	<div>
-		<%= form.label :description, style: "display: block" %>
-		<%= form.text_field :description %>
-	</div>
+      <ul>
+        <% coin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-	<div>
-		<%= form.label :acronym, style: "display: block" %>
-		<%= form.text_field :acronym %>
-	</div>
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
 
-	<div>
-		<%= form.label :url_image, style: "display: block" %>
-		<%= form.text_field :url_image %>
-	</div>
+  <div class="my-5">
+    <%= form.label :acronym %>
+    <%= form.text_field :acronym, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
 
-	<div>
-		<%= form.submit %>
-	</div>
+  <div class="my-5">
+    <%= form.label :url_image %>
+    <%= form.text_field :url_image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
 <% end %>
