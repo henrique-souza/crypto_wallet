@@ -1,11 +1,17 @@
-<h1>Welcome!</h1>
+<h1 class="mb-4 text-4xl leading-none tracking-tight">
+  Welcome to Crypto Wallet!
+</h1>
 
-<p><strong>Data: </strong> <%= brazilian_date(Date.today) %> </p>
+<ul>
+  <p class="mt-2">
+    <strong>Data: </strong> <%= brazilian_date(Date.today) %>
+  </p>
 
-<%= render 'menu' %>
+  <%= render 'menu' %>
 
-<p>
-  Você está em ambiente de <strong> <%= ambiente_rails %> </strong>
-</p>
+  <p class="mt-2">
+    Você está em ambiente de <strong> <%= ambiente_rails %> </strong>
+  </p>
 
-<%= render 'instances' %>
+  <%= render 'instances' %>
+</ul>
