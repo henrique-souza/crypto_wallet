@@ -13,10 +13,10 @@ Things you may want to cover:
 
   * Install Ruby
   * Download the project
-    * Run ```bundle install```
+    * Run ```bundle install``` or `ruby bin/setup`
     * Run ```rails db:create```
     * Run ```rails db:migrate```
-    * Run ```rails s```
+    * Run ```bin/dev```
   * Open ```http://{PORT}/coins``` to use
 
 * Database creation
