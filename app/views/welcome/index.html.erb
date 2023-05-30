@@ -3,15 +3,17 @@
 </h1>
 
 <ul>
-  <p class="mt-2">
-    <strong>Data: </strong> <%= brazilian_date(Date.today) %>
-  </p>
+  <%= content_tag :li do %>
+    <%= render 'menu' %>
 
-  <%= render 'menu' %>
+    <p class="mt-2">
+      <strong>Data: </strong> <%= brazilian_date(Date.today) %>
+    </p>
 
-  <p class="mt-2">
-    Você está em ambiente de <strong> <%= ambiente_rails %> </strong>
-  </p>
+    <p class="mt-2">
+      Você está em ambiente de <strong> <%= ambiente_rails %> </strong>
+    </p>
 
-  <%= render 'instances' %>
+    <%= render 'instances' %>
+  <% end %>
 </ul>
